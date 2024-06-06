@@ -7,13 +7,11 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Ignore all node_modules
 node_modules
 
 # Ignore all package.json files
 package-lock.json
-**/package-lock.json
-client/package-lock.json
-server/package-lock.json
 
 # Don't push our production build
 dist
