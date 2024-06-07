@@ -10,6 +10,9 @@
     "dev:client": "cd client && npm run dev && cd ..",
     "lint:client": "cd client && npm run lint && cd ..",
     "setup:client": "cd client && npm run setup && cd ..",
+    "prepare": "husky install",
+    "pre-commit": "npm run pre-commit:client",
+    "pre-commit:client": "cd client && npm run pre-commit && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -39,5 +42,8 @@
   "homepage": "https://github.com/liz-garcia/top-cv#readme",
   "dependencies": {
     "concurrently": "^8.2.2"
+  },
+  "devDependencies": {
+    "husky": "^9.0.11"
   }
 }

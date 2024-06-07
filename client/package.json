@@ -6,13 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "preview": "vite preview",
     "autofix": "npm run lint:fix && npm run prettier:fix",
     "code-style-check": "npm run prettier && npm run lint",
-    "lint": "eslint ./src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "prettier": "prettier ./src --check",
     "prettier:fix": "prettier ./src --write",
-    "preview": "vite preview",
+    "pre-commit": "npm run code-style-check",
     "setup": "npm install --include=dev"
   },
   "dependencies": {
