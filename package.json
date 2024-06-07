@@ -8,6 +8,7 @@
     "auto-fix:client": "cd client && npm run auto-fix && cd ..",
     "build:client": "cd client && npm run build && cd ..",
     "code-style-check:client": "cd client && npm run code-style-check && cd ..",
+    "dev": "npm run dev:client",
     "dev:client": "cd client && npm run dev && cd ..",
     "lint:client": "cd client && npm run lint && cd ..",
     "setup:client": "cd client && npm run setup && cd ..",
