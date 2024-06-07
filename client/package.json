@@ -4,9 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "autofix": "npm run lint:fix && npm run prettier:fix",
     "dev": "vite",
     "build": "vite build",
+    "autofix": "npm run lint:fix && npm run prettier:fix",
+    "code-style-check": "npm run prettier && npm run lint",
     "lint": "eslint ./src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint ./src --fix",
     "prettier": "prettier ./src --check",
