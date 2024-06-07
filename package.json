@@ -4,8 +4,8 @@
   "description": "Web application for creation ATS-friendly resumes.",
   "main": "index.js",
   "scripts": {
-    "autofix": "npm run autofix:client",
-    "autofix:client": "cd client && npm run autofix && cd ..",
+    "auto-fix": "npm run auto-fix:client",
+    "auto-fix:client": "cd client && npm run auto-fix && cd ..",
     "build:client": "cd client && npm run build && cd ..",
     "code-style-check:client": "cd client && npm run code-style-check && cd ..",
     "dev:client": "cd client && npm run dev && cd ..",
