@@ -4,6 +4,9 @@
   "description": "Web application for creation ATS-friendly resumes.",
   "main": "index.js",
   "scripts": {
+    "build:client": "cd client && npm run build && cd ..",
+    "dev:client": "cd client && npm run dev && cd ..",
+    "setup:client": "cd client && npm run setup && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
