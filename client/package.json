@@ -1,5 +1,5 @@
 {
-  "name": "project-client",
+  "name": "client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,8 +9,8 @@
     "preview": "vite preview",
     "autofix": "npm run lint:fix && npm run prettier:fix",
     "code-style-check": "npm run prettier && npm run lint",
-    "lint": "eslint ./src",
-    "lint:fix": "eslint ./src --fix",
+    "lint": "eslint ./src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint ./src --ext js,jsx --fix",
     "prettier": "prettier ./src --check",
     "prettier:fix": "prettier ./src --write",
     "pre-commit": "npm run code-style-check",

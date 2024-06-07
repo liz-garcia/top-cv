@@ -4,6 +4,7 @@
   "description": "Web application for creation ATS-friendly resumes.",
   "main": "index.js",
   "scripts": {
+    "autofix": "npm run autofix:client",
     "autofix:client": "cd client && npm run autofix && cd ..",
     "build:client": "cd client && npm run build && cd ..",
     "code-style-check:client": "cd client && npm run code-style-check && cd ..",
@@ -44,6 +45,6 @@
     "concurrently": "^8.2.2"
   },
   "devDependencies": {
-    "husky": "^9.0.11"
+    "husky": "^8.0.0"
   }
 }
