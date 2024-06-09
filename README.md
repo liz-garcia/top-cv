@@ -1,10 +1,10 @@
 # TopCV
 
-TopCV is a free, fun, easy-to-use web application for creating one-page, clear, ATS-friendly resumes.
-
 ```text
-👉 This project is still a work in progress!
+🚧 Work in progress.
 ```
+
+TopCV is a free, fun, easy-to-use web application for creating one-page, clear, ATS-friendly resumes.
 
 ## System Overview
 
