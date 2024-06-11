@@ -8,5 +8,6 @@ The client-side application is built using `JavaScript/React/Vite`, and it handl
 - CV creation
 - AI-powered CV assessment
 - Spell-checker for all input texts
-- Exporting into PDF and public link
+- Exporting into PDF
+- Generating public shareable link
 ```
