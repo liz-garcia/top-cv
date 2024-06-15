@@ -1,5 +1,5 @@
-import express from "express";
-import cors from "cors";
+import express from 'express';
+import cors from 'cors';
 
 // import userRouter from "./routes/user.js";
 
@@ -19,8 +19,8 @@ app.use(cors());
 // app.use("/api/user", userRouter);
 
 // * Initial server setup - data example
-import dataRouter from "./routes/data.js";
-app.use("/api/data", dataRouter);
+import dataRouter from './routes/data.js';
+app.use('/api/data', dataRouter);
 // *
 
 export default app;
