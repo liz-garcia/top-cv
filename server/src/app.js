@@ -1,10 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 
-// * Add comment to test git and vscode, running scripts from root.
-const testVariable = 'test prettier!';
-console.log(testVariable);
-
 // import userRouter from "./routes/user.js";
 
 // Create an express server
