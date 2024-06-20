@@ -5,11 +5,14 @@ import './App.css';
 
 function App() {
   const [count, setCount] = useState(0);
+  const [dataMessage, setDataMessage] = useState(null);
+
+  // * Import server port
+  const serverPort = import.meta.env.VITE_SERVER_PORT;
+  const serverURL = `http://localhost:${serverPort}`;
+  const dataURL = `${serverURL}/api/data`;
 
   // * Initial server setup - data example
-  const [dataMessage, setDataMessage] = useState(null);
-  const dataURL = 'http://localhost:3000/api/data';
-
   const fetchDataMessage = async (url) => {
     try {
       const response = await fetch(url);
@@ -24,12 +27,16 @@ function App() {
   };
 
   useEffect(() => {
-    const getData = async () => {
-      const currentResponseMessage = await fetchDataMessage(dataURL);
+    const getDataMessage = async (url) => {
+      const currentResponseMessage = await fetchDataMessage(url);
       setDataMessage(currentResponseMessage);
+
+      // TODO Remove console.log's later -- set a rule in prettier/eslint/config
+      console.log(url);
     };
 
-    getData();
+    // * Use dataURL as argument
+    getDataMessage(dataURL);
   }, [dataURL]);
   // * Initial server setup - data example
 
