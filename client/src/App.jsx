@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,12 +17,12 @@ function App() {
     try {
       const response = await fetch(url);
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
       const responseMessage = await response.json();
       return responseMessage;
     } catch (error) {
-      console.error('Fetch error:', error);
+      console.error("Fetch error:", error);
     }
   };
 
@@ -51,7 +51,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React + Node</h1>
-      <h2>{dataMessage ? dataMessage.message : 'Loading...'}</h2>
+      <h2>{dataMessage ? dataMessage.message : "Loading..."}</h2>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
