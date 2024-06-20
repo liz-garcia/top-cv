@@ -27,6 +27,9 @@ coverage
 
 # Never push our environment variables
 .env
+.env.development
+.env.production
+.env.test
 
 # Cypress videos from our headless runs should not be pushed to github
 cypress/videos
