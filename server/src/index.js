@@ -1,8 +1,9 @@
 import app from "./app.js";
 import dotenv from "dotenv";
-dotenv.config();
+const environment = process.env.NODE_ENV;
+dotenv.config({ path: `.env.${environment}` });
 
-// The environment should set the port
+// * The environment should set the port
 const port = process.env.PORT;
 
 app.get("/", (req, res) => {
@@ -10,5 +11,7 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
+  console.log(
+    `Server running in ${environment} mode on port ${port} at http://localhost:${port}/`
+  );
 });
