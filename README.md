@@ -4,7 +4,7 @@
 🚧 Work in progress.
 ```
 
-TopCV is a free, fun, easy-to-use web application for creating one-page, clear, ATS-friendly resumes.
+TopCV is a web application for creating one-page ATS-friendly resumes.
 
 ## System Overview
 
