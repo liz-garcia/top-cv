@@ -5,7 +5,7 @@ import express from "express";
 import app from "./app.js";
 
 const environment = process.env.NODE_ENV;
-dotenv.config({ path: `./server/.env.${environment}` });
+dotenv.config({ path: `.env.${environment}` });
 
 const port = process.env.PORT;
 
