@@ -8,6 +8,7 @@
     "start:server": "cd server && npm run start && cd ..",
     "build": "echo \"Build script ignored! Heroku will use this and we want to have full control\"",
     "build:client": "cd client && npm run build && cd ..",
+    "heroku-postbuild": "npm run setup && npm run build:client",
     "auto-fix": "npm run auto-fix:client && npm run auto-fix:server",
     "auto-fix:client": "cd client && npm run auto-fix && cd ..",
     "auto-fix:server": "cd server && npm run auto-fix && cd ..",
