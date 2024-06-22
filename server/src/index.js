@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
-import express from "express";
+import { fileURLToPath } from "url";
 import path from "path";
+import express from "express";
 import app from "./app.js";
 
 const environment = process.env.NODE_ENV;
@@ -25,6 +26,7 @@ app.get("/", (req, res) => {
  * We only want to host our client code when in production mode as we then want to use the production build that is built in the dist folder.
  * When not in production, don't host the files, but the development version of the app can connect to the backend itself.
  */
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // Serve static files and handle client-side routing in production mode
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../../client/dist")));
