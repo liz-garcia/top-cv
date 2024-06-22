@@ -3,13 +3,16 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
+// * Load environment variables from .env file
+// import dotenv from "dotenv";
+// dotenv.config();
+
 function App() {
   const [count, setCount] = useState(0);
   const [dataMessage, setDataMessage] = useState(null);
 
   // * Import server port
-  const serverPort = import.meta.env.VITE_SERVER_PORT;
-  const serverURL = `http://localhost:${serverPort}`;
+  const serverURL = import.meta.env.VITE_BASE_SERVER_URL;
   const dataURL = `${serverURL}/api/data`;
 
   // * Initial server setup - data example

@@ -4,9 +4,9 @@ import path from "path";
 import express from "express";
 import app from "./app.js";
 
-const environment = process.env.NODE_ENV;
-dotenv.config({ path: `.env.${environment}` });
+dotenv.config();
 
+// The environment should set the port
 const port = process.env.PORT;
 
 if (port == null) {
@@ -27,6 +27,7 @@ app.get("/", (req, res) => {
  * When not in production, don't host the files, but the development version of the app can connect to the backend itself.
  */
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 // Serve static files and handle client-side routing in production mode
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../../client/dist")));
@@ -41,8 +42,6 @@ app.listen(port, (err) => {
   if (err) {
     console.error("Failed to start server:", err);
   } else {
-    console.log(
-      `Server running in ${environment} mode on port ${port} at http://localhost:${port}/`
-    );
+    console.log(`Server started on port http://localhost:${port}/`);
   }
 });

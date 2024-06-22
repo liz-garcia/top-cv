@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "NODE_ENV=development vite",
-    "build": "NODE_ENV=production vite build",
+    "dev": "vite",
+    "build": "vite build",
     "preview": "vite preview",
     "auto-fix": "npm run lint:fix && npm run prettier:fix",
     "code-style-check": "npm run prettier && npm run lint",

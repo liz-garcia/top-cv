@@ -12,8 +12,7 @@
     "prettier": "prettier ./src --check",
     "prettier:fix": "prettier ./src --write",
     "start": "NODE_ENV=production node ./src/index.js",
-    "dev": "NODE_ENV=development nodemon ./src/index",
-    "build": "NODE_ENV=production node ./src/index",
+    "dev": "nodemon ./src/index",
     "setup": "npm install --include=dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
