@@ -12,6 +12,7 @@ const vitePort = process.env.VITE_PORT;
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: "/client/dist/", // Adjust this path as per your actual folder structure
   server: {
     port: vitePort,
   },
