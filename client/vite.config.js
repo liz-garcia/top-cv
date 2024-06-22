@@ -7,7 +7,7 @@ const environment = process.env.NODE_ENV;
 dotenv.config({ path: `.env.${environment}` });
 
 // * The environment should set the port
-const vitePort = process.env.VITE_PORT;
+const vitePort = process.env.PORT;
 
 // https://vitejs.dev/config/
 export default defineConfig({
