@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm run start:server",
     "start:server": "cd server && npm run start && cd ..",
+    "start:both": "concurrently \"npm run start:server\" \"npm run build:client\"",
     "build": "echo \"Build script ignored! Heroku will use this and we want to have full control\"",
     "build:client": "cd client && npm run build && cd ..",
     "heroku-postbuild": "npm run setup && npm run build:client",
