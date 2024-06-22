@@ -11,7 +11,7 @@
     "lint:fix": "eslint ./src --fix",
     "prettier": "prettier ./src --check",
     "prettier:fix": "prettier ./src --write",
-    "start": "node ./src/index.js",
+    "start": "NODE_ENV=production node ./src/index.js",
     "dev": "NODE_ENV=development nodemon ./src/index",
     "build": "NODE_ENV=production node ./src/index",
     "setup": "npm install --include=dev",
