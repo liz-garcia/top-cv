@@ -12,7 +12,7 @@ function App() {
   const [dataMessage, setDataMessage] = useState(null);
 
   // * Import server port
-  const serverURL = import.meta.env.VITE_BASE_SERVER_URL;
+  const serverURL = import.meta.env.BASE_SERVER_URL;
   const dataURL = `${serverURL}/api/data`;
 
   // * Initial server setup - data example
