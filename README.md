@@ -16,8 +16,8 @@ The system is composed of a client, a server, and a database. The client interac
 
 #### Components
 
-- **Client:** Vite, React, JavaScript
-- **Server:** NodeJS, Express
+- **Client:** Vite, React, Redux, JavaScript
+- **Server:** NodeJS, Express, WebSockets
 - **Database:** MongoDB, Mongoose
 - **Testing:** Jest, Cypress
 - **CSS Framework:** Tailwind CSS
