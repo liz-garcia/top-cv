@@ -16,9 +16,9 @@ if (port == null) {
   process.exit(1); // Exit the process if PORT is not defined
 }
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello World!");
+// });
 
 // * Host our client code for Heroku
 /**
