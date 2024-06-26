@@ -36,7 +36,7 @@ function App() {
 
       // TODO Remove console.log's later -- set a rule in prettier/eslint/config
       console.log(import.meta.env.VITE_BASE_SERVER_URL);
-      console.log("This is the full fetch url we get:", url);
+      console.log("Extra: This is the full fetch url we get:", url);
     };
 
     // * Use dataURL as argument
