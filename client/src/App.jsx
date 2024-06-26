@@ -35,6 +35,7 @@ function App() {
       setDataMessage(currentResponseMessage);
 
       // TODO Remove console.log's later -- set a rule in prettier/eslint/config
+      console.log(import.meta.env.VITE_BASE_SERVER_URL);
       console.log(url);
     };
 
