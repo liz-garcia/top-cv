@@ -71,4 +71,5 @@ function App() {
   );
 }
 
+// * Test comment here
 export default App;
