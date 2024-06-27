@@ -29,3 +29,9 @@ jobs:
       working-directory: server
     - run: npm run code-style-check
       working-directory: server
+      # Add Debug step here
+    - name: Debug
+      run: |
+        echo "Node.js version: $(node --version)"
+        echo "npm version: $(npm --version)"
+        npm run lint
