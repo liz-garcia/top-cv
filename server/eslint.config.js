@@ -46,6 +46,7 @@ export default [
       "prettier/prettier": "error",
       "import/prefer-default-export": "off",
       "import/extensions": "off",
+      "constructor-super": "off",
       quotes: ["error", "double"],
       // "no-console": "warn", // Uncomment this if you want to warn against console usage
     },
