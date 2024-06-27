@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "aaron-bond.better-comments", // Better Comments
+    "esbenp.prettier-vscode", // Prettier - Code formatter
+    "dbaeumer.vscode-eslint" // ESLint
+  ]
+}
