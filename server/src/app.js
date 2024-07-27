@@ -20,4 +20,9 @@ app.use(cors());
 app.use("/api/", serverRouter);
 app.use("/api/user", userRouter);
 
+// * Initial server setup - data example
+import dataRouter from "./routes/data.js";
+app.use("/api/data", dataRouter);
+// *
+
 export default app;
