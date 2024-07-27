@@ -12,14 +12,6 @@ function App() {
   const [users, setUsers] = useState(null);
 
   // * Import server port
-  // let serverURL;
-
-  // if (import.meta.env.NODE_ENV === "production") {
-  //   serverURL = import.meta.env.VITE_UI_BASE_URL;
-  // } else {
-  //   serverURL = import.meta.env.VITE_BASE_SERVER_URL;
-  // }
-
   const serverURL = import.meta.env.VITE_BASE_SERVER_URL;
   const userURL = `${serverURL}/api/user`;
 
