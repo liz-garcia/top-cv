@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import { URL } from "url";
 import express from "express";
 import app from "./app.js";
+import connectDB from "./database/connectDB.js";
 
 dotenv.config();
 
@@ -22,13 +23,13 @@ if (port == null) {
 const startServer = async () => {
   try {
     // TODO Create Database Connection
-    // await connectDB();
+    await connectDB();
     app.listen(port, (err) => {
       if (err) {
         console.error(`\n\u001b[1;31mFailed to start server: ${err}\u001b[0m`);
       } else {
         console.log(
-          `\n\u001b[1mServer\u001b[22m started on port \n\u001b[36mhttp://localhost:\u001b[1m${port}\u001b[22m/\u001b[0m`
+          `\n\u001b[1mServer\u001b[22m started on port \n\u001b[36mhttp://localhost:\u001b[1m${port}\u001b[22m/api/\u001b[0m`
         );
       }
     });

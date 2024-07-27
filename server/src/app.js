@@ -3,9 +3,7 @@ import cors from "cors";
 
 // * Import routers
 import serverRouter from "./routes/server.js";
-import dataRouter from "./routes/data.js";
-
-// import userRouter from "./routes/user.js";
+import userRouter from "./routes/user.js";
 
 // * Create an express server
 const app = express();
@@ -20,7 +18,6 @@ app.use(cors());
 // * Attach routes
 // We use /api/ at the start of every route! As we also host our client code on heroku, we want to separate the API endpoints.
 app.use("/api/", serverRouter);
-app.use("/api/data", dataRouter);
-// app.use("/api/user", userRouter);
+app.use("/api/user", userRouter);
 
 export default app;
