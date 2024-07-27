@@ -11,7 +11,9 @@ const port = process.env.PORT;
 if (port == null) {
   // If this fails, make sure you have created the `.env` files in the right place with the PORT set
   console.error(
-    new Error("Cannot find a PORT number. Please add an .env file.")
+    new Error(
+      "Cannot find a PORT number. Please add an .env file with the PORT defined."
+    )
   );
   process.exit(1); // Exit the process if PORT is not defined
 }
@@ -23,9 +25,11 @@ const startServer = async () => {
     // await connectDB();
     app.listen(port, (err) => {
       if (err) {
-        console.error("Failed to start server:", err);
+        console.error(`\n\u001b[1;31mFailed to start server: ${err}\u001b[0m`);
       } else {
-        console.log(`Server started on port http://localhost:${port}/`);
+        console.log(
+          `\n\u001b[1mServer\u001b[22m started on port \n\u001b[36mhttp://localhost:\u001b[1m${port}\u001b[22m/\u001b[0m`
+        );
       }
     });
   } catch (error) {
