@@ -9,39 +9,35 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [dataMessage, setDataMessage] = useState(null);
+  const [users, setUsers] = useState(null);
 
   // * Import server port
   const serverURL = import.meta.env.VITE_BASE_SERVER_URL;
-  const dataURL = `${serverURL}/api/data`;
+  const userURL = `${serverURL}/api/user`;
 
   // * Initial server setup - data example
-  const fetchDataMessage = async (url) => {
+  const fetchData = async (url) => {
     try {
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      const responseMessage = await response.json();
-      return responseMessage;
+      const data = await response.json();
+      return data;
     } catch (error) {
       console.error("Fetch error:", error);
     }
   };
 
   useEffect(() => {
-    const getDataMessage = async (url) => {
-      const currentResponseMessage = await fetchDataMessage(url);
-      setDataMessage(currentResponseMessage);
-
-      // TODO Remove console.log's later -- set a rule in prettier/eslint/config
-      console.log(import.meta.env.VITE_BASE_SERVER_URL);
-      console.log("Extra: This is the full fetch url we get:", url);
+    const getUsersData = async (url) => {
+      const usersData = await fetchData(url);
+      setUsers(usersData.result);
     };
 
-    // * Use dataURL as argument
-    getDataMessage(dataURL);
-  }, [dataURL]);
+    // * Use userURL as argument
+    getUsersData(userURL);
+  }, [userURL]);
   // * Initial server setup - data example
 
   return (
@@ -55,7 +51,14 @@ function App() {
         </a>
       </div>
       <h1>Vite + React + Node</h1>
-      <h2>{dataMessage ? dataMessage.message : "Loading..."}</h2>
+      <h2>Current users:</h2>
+      <div>
+        {users ? (
+          users.map((user) => <div key={user._id}>{user.name}</div>)
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -71,5 +74,4 @@ function App() {
   );
 }
 
-// * Test comment here
 export default App;
