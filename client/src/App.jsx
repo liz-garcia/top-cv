@@ -15,7 +15,7 @@ function App() {
   let serverURL;
 
   if (import.meta.env.NODE_ENV === "production") {
-    serverURL = import.meta.env.UI_BASE_URL;
+    serverURL = import.meta.env.VITE_UI_BASE_URL;
   } else {
     serverURL = import.meta.env.VITE_BASE_SERVER_URL;
   }
