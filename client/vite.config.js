@@ -1,11 +1,18 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-
-// * Load environment variables from .env file
+import removeConsole from "vite-plugin-remove-console";
 import dotenv from "dotenv";
+
+// Load environment variables from .env file
 dotenv.config();
 
-// https://vitejs.dev/config/
+// Vite configuration
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    removeConsole({
+      // Apply to all JavaScript/TypeScript files
+      include: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+    }),
+  ],
 });
