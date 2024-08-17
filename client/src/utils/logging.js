@@ -6,7 +6,7 @@
  */
 
 // * Utility to check with Vite if the environment is production.
-const isProduction = import.meta.env.NODE_ENV === "production";
+const isProduction = import.meta.env.VITE_NODE_ENV === "production";
 
 // * ANSI color codes for styling
 const styles = {
@@ -18,20 +18,52 @@ const styles = {
 };
 
 // * logInfo should be used to log anything that can be used for debugging but is not a problem.
-export const logInfo = (message) => {
+export const logInfo = (...args) => {
   if (!isProduction) {
-    const styledMessage = `${styles.bold}${styles.cyan}${message}${styles.reset}`;
+    const styledMessage = args
+      .map((arg) => {
+        // Check if the argument is a string and contains new lines
+        if (typeof arg === "string") {
+          // Split by new lines and apply styles to each line
+          return arg
+            .split("\n")
+            .map((line) => `${styles.bold}${styles.cyan}${line}${styles.reset}`)
+            .join("\n");
+        } else {
+          // For non-string arguments, just apply the default style
+          return `${styles.bold}${arg}${styles.reset}`;
+        }
+      })
+      .join(" ");
+
     // eslint-disable-next-line no-console
     console.log(styledMessage);
   }
 };
 
 //  * logWarning should be used to log anything that signals a problem that is not app breaking.
-export const logWarning = (message) => {
+export const logWarning = (...args) => {
   if (!isProduction) {
-    const styledMessage = `${styles.bold}${styles.yellow}${message}${styles.reset}`;
+    const styledMessage = args
+      .map((arg) => {
+        // Check if the argument is a string and contains new lines
+        if (typeof arg === "string") {
+          // Split by new lines and apply styles to each line
+          return arg
+            .split("\n")
+            .map(
+              (line) => `${styles.bold}${styles.yellow}${line}${styles.reset}`
+            )
+            .join("\n");
+        } else {
+          // For non-string arguments, just apply the default style
+          return `${styles.bold}${arg}${styles.reset}`;
+        }
+      })
+      .join(" ");
+
     // eslint-disable-next-line no-console
-    console.warn(styledMessage);
+    console.log(styledMessage);
   }
 };
 
@@ -40,9 +72,9 @@ export const logError = (errorMessage) => {
   if (!isProduction) {
     let styledMessage;
     if (errorMessage instanceof Error) {
-      styledMessage = `${styles.bold}${styles.red}${errorMessage.message}\n${errorMessage.stack}${styles.reset}`;
+      styledMessage = `\n${styles.bold}${styles.red}${errorMessage.message}\n${errorMessage.stack}${styles.reset}\n`;
     } else {
-      styledMessage = `${styles.bold}${styles.red}ERROR: ${errorMessage}${styles.reset}`;
+      styledMessage = `\n${styles.bold}${styles.red}ERROR: ${errorMessage}${styles.reset}\n`;
     }
     // eslint-disable-next-line no-console
     console.error(styledMessage);

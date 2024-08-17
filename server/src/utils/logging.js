@@ -23,7 +23,7 @@ const styles = {
 // * logInfo should be used to log anything that can be used for debugging but is not a problem.
 export const logInfo = (message) => {
   if (!isProduction) {
-    const styledMessage = `${styles.bold}${styles.cyan}${message}${styles.reset}`;
+    const styledMessage = `\n${styles.bold}${styles.cyan}${message}${styles.reset}\n`;
     // eslint-disable-next-line no-console
     console.log(styledMessage);
   }
@@ -32,7 +32,7 @@ export const logInfo = (message) => {
 //  * logWarning should be used to log anything that signals a problem that is not app breaking.
 export const logWarning = (message) => {
   if (!isProduction) {
-    const styledMessage = `${styles.bold}${styles.yellow}${message}${styles.reset}`;
+    const styledMessage = `\n${styles.bold}${styles.yellow}${message}${styles.reset}\n`;
     // eslint-disable-next-line no-console
     console.warn(styledMessage);
   }
@@ -43,9 +43,9 @@ export const logError = (errorMessage) => {
   if (!isProduction) {
     let styledMessage;
     if (errorMessage instanceof Error) {
-      styledMessage = `${styles.bold}${styles.red}${errorMessage.message}\n${errorMessage.stack}${styles.reset}`;
+      styledMessage = `\n${styles.bold}${styles.red}${errorMessage.message}\n${errorMessage.stack}${styles.reset}\n`;
     } else {
-      styledMessage = `${styles.bold}${styles.red}ERROR: ${errorMessage}${styles.reset}`;
+      styledMessage = `\n${styles.bold}${styles.red}ERROR: ${errorMessage}${styles.reset}\n`;
     }
     // eslint-disable-next-line no-console
     console.error(styledMessage);

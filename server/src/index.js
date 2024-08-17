@@ -25,7 +25,7 @@ const startServer = async () => {
         logError(`Failed to start server: ${err}`);
         process.exit(1); // Exit the process if the server fails to start
       } else {
-        logInfo(`Server started on port http://localhost:${port}/api/`);
+        logInfo(`Server started on port\nhttp://localhost:${port}/api/`);
       }
     });
   } catch (error) {
