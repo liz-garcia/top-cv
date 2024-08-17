@@ -53,10 +53,12 @@ const useFetch = (route, onReceived) => {
       },
     };
 
+    const baseUrl = import.meta.env.VITE_BASE_URL;
+
     const fetchData = async () => {
       try {
         // * We add the /api subsection here to make it a single point of change if our configuration changes
-        const url = `${import.meta.env.VITE_BASE_URL}/api${route}`;
+        const url = `${baseUrl}/api${route}`;
         const res = await fetch(url, { ...baseOptions, ...options, signal });
 
         if (!res.ok) {
