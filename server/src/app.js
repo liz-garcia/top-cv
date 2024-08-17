@@ -1,3 +1,13 @@
+// * Disable console methods in production
+if (process.env.NODE_ENV === "production") {
+  // eslint-disable-next-line no-console
+  console.log = function () {};
+  // eslint-disable-next-line no-console
+  console.warn = function () {};
+  // eslint-disable-next-line no-console
+  console.error = function () {};
+}
+
 import express from "express";
 import cors from "cors";
 
