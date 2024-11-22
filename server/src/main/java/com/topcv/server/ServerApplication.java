@@ -5,6 +5,8 @@ import javax.annotation.PostConstruct;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.Objects;
+
 @SpringBootApplication
 public class ServerApplication {
 
@@ -13,7 +15,7 @@ public class ServerApplication {
     // Load the .env file
     Dotenv dotenv = Dotenv.configure().load();
     // Set the MONGODB_URI as a system property for Spring Boot to use
-    System.setProperty("MONGODB_URI", dotenv.get("MONGODB_URI"));
+    System.setProperty("MONGODB_URI", Objects.requireNonNull(dotenv.get("MONGODB_URI")));
   }
 
   public static void main(String[] args) {
