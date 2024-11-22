@@ -3,6 +3,7 @@ plugins {
     id 'org.springframework.boot' version '3.3.5'
     id 'io.spring.dependency-management' version '1.1.6'
     id 'checkstyle'
+    id 'com.diffplug.spotless' version '6.21.0'
 }
 
 group = 'com.topcv'
@@ -20,16 +21,14 @@ repositories {
 
 checkstyle {
     toolVersion = '10.20.1'
-//    ignoreFailures = false
-//    showViolations = true
 }
 
-//tasks.register('checkstyleReport') {
-//    dependsOn 'checkstyleMain'
-//    doLast {
-//        println 'Checkstyle report generated!'
-//    }
-//}
+spotless {
+    java {
+        target 'src/**/*.java' // Format all Java files in src/
+        googleJavaFormat() // Use Google's Java style guide
+    }
+}
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'

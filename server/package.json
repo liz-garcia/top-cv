@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "checkstyle": "./gradlew checkstyleMain",
     "dev": "./gradlew bootRun",
-    "pre-commit": "npm run checkstyle",
+    "pre-commit": "npm run code-style-check",
+    "code-style-check": "./gradlew checkstyleMain",
+    "auto-fix": "npm run spotless:fix && npm run code-style-check",
+    "spotless:fix": "./gradlew spotlessApply",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
