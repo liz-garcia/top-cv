@@ -42,3 +42,17 @@ cypress/screenshots
 *.njsproj
 *.sln
 *.sw?
+
+# IntelliJ
+.idea/
+*.iml
+
+# Maven
+target/
+
+# Gradle
+build/
+
+# Logs
+logs/
+*.log
