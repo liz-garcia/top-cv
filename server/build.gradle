@@ -20,16 +20,16 @@ repositories {
 
 checkstyle {
     toolVersion = '10.20.1'
-    ignoreFailures = false
-    showViolations = true
+//    ignoreFailures = false
+//    showViolations = true
 }
 
-tasks.register('checkstyleReport') {
-    dependsOn 'checkstyleMain'
-    doLast {
-        println 'Checkstyle report generated!'
-    }
-}
+//tasks.register('checkstyleReport') {
+//    dependsOn 'checkstyleMain'
+//    doLast {
+//        println 'Checkstyle report generated!'
+//    }
+//}
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
@@ -38,6 +38,7 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'io.github.cdimascio:java-dotenv:5.2.2'
     implementation 'javax.annotation:javax.annotation-api:1.3.2'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }
 
 tasks.named('test') {
