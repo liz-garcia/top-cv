@@ -9,7 +9,4 @@
             "url": "heroku/gradle"
         }
     ],
-    "scripts": {
-        "postdeploy": "npm run setup"
-    }
 }
