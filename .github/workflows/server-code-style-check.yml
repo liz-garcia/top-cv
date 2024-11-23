@@ -1,5 +1,5 @@
-# This workflow will do our code style checks for the Server
-name: Server Code style (prettier, lint)
+# This workflow will do code style checks for the Server
+name: Server Code Style (Spotless, Checkstyle)
 
 on:
   push:
@@ -12,20 +12,18 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-        # Note: keep this the same as the version on Heroku!
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+    # Step 1: Check out the code
+    - uses: actions/checkout@v3
+
+    # Step 2: Set up Java
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-      working-directory: server
-    - run: npm run code-style-check
-      working-directory: server
+        distribution: 'temurin' # Use the Eclipse Temurin JDK
+        java-version: '17' # Match the version in your Gradle build file
+        cache: 'gradle'
+
+    # Step 3: Run Gradle build to check code style
+    - name: Run code style checks
+      run: ./gradlew spotlessCheck checkstyleMain
