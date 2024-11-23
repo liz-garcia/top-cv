@@ -3,8 +3,10 @@ package com.topcv.server.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/** Represents a user in the system. */
 @Document(collection = "users")
 public class User {
+
   @Id private String id;
   private String name;
   private String lastName;

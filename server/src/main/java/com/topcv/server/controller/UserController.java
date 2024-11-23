@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/** Controller for managing User-related API endpoints. Provides endpoints to fetch user data. */
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -19,6 +20,7 @@ public class UserController {
 
   @Autowired private UserRepository userRepository;
 
+  /** Handles GET requests to fetch all users. */
   @GetMapping
   public ResponseEntity<?> getUsers() {
     try {
@@ -31,20 +33,20 @@ public class UserController {
     }
   }
 
-  // Response wrapper class
+  /** Wrapper class for API responses. */
   static class Response {
-    private boolean success;
+    private boolean success; // Success status
     private Object result; // Used for data in success cases
     private String msg; // Used for error messages
 
-    // Constructor for success response
+    /** Constructor for success responses. */
     public Response(boolean success, Object result) {
       this.success = success;
-      this.result = result;
       this.msg = null; // No message for success
+      this.result = result;
     }
 
-    // Constructor for failure response
+    /** Constructor for error responses. */
     public Response(boolean success, String msg) {
       this.success = success;
       this.msg = msg;
