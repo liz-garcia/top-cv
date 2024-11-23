@@ -27,3 +27,4 @@ jobs:
     # Step 3: Run Gradle build to check code style
     - name: Run code style checks
       run: ./gradlew spotlessCheck checkstyleMain
+      working-directory: server
