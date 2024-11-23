@@ -1,23 +1,26 @@
 {
     "name": "top-cv",
-    "description": "A full-stack application with client and server",
+    "description": "Full-stack monorepo: Vite React frontend and Java Spring Boot backend",
+    "scripts": {},
     "buildpacks": [
-      {
-        "url": "heroku/nodejs"
-      },
-      {
-        "url": "heroku/java"
-      }
+        {
+            "url": "heroku/nodejs"
+        },
+        {
+            "url": "heroku/java"
+        }
     ],
-    "scripts": {
-      "postdeploy": "./gradlew build && npm run start:server"
+    "formation": {
+        "web": {
+            "quantity": 1,
+            "size": "free"
+        }
     },
     "environments": {
-      "test": {
-        "scripts": {
-          "test": "echo 'Running tests...'"
+        "test": {
+            "scripts": {
+                "test": "npm test"
+            }
         }
-      }
     }
-  }
-  
+}
