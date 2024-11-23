@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "setup": "npm install --include=dev",
-    "start": "./gradlew bootRun",
+    "start": "java -jar build/libs/server-0.0.1-SNAPSHOT.jar",
+    "build": "./gradlew bootRun",
     "dev": "./gradlew bootRun",
     "pre-commit": "npm run code-style-check",
     "code-style-check": "./gradlew checkstyleMain",
