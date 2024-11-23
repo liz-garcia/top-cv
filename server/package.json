@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "./gradlew bootRun",
     "dev": "./gradlew bootRun",
     "pre-commit": "npm run code-style-check",
     "code-style-check": "./gradlew checkstyleMain",
