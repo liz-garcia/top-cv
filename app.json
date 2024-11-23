@@ -1,0 +1,23 @@
+{
+    "name": "top-cv",
+    "description": "A full-stack application with client and server",
+    "buildpacks": [
+      {
+        "url": "heroku/nodejs"
+      },
+      {
+        "url": "heroku/java"
+      }
+    ],
+    "scripts": {
+      "postdeploy": "./gradlew build && npm run start:server"
+    },
+    "environments": {
+      "test": {
+        "scripts": {
+          "test": "echo 'Running tests...'"
+        }
+      }
+    }
+  }
+  
