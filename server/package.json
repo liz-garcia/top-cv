@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "setup": "./gradlew build",
-    "start": "java -jar build/libs/server-0.0.1-SNAPSHOT.jar",
+    "setup": "npm install --include=dev && ./gradlew build",
+    "start": "JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java)))) java -jar build/libs/server-0.0.1-SNAPSHOT.jar",
     "dev": "./gradlew bootRun",
     "pre-commit": "npm run code-style-check",
     "code-style-check": "./gradlew checkstyleMain",
