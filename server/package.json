@@ -9,6 +9,7 @@
     "code-style-check": "./gradlew checkstyleMain",
     "auto-fix": "npm run spotless:fix && npm run code-style-check",
     "spotless:fix": "./gradlew spotlessApply",
+    "setup": "npm install --include=dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
