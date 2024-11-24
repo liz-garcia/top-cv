@@ -1,1 +1,1 @@
-web: cd server && java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/server-0.0.1-SNAPSHOT.jar
+web: npm run start
