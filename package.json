@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run start:server",
-    "start:server": "cd server && npm run start && cd ..",
+    "start:server": "cd server && npm run start",
     "start:both": "npm run build:client && npm run start:server",
     "build": "echo \"Build script ignored! Heroku will use this and we want to have full control\"",
     "build:client": "cd client && npm run build && cd ..",

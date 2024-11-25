@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/Home.jsx";
-import UserList from "./pages/User/UserList.jsx";
-import CreateUser from "./pages/User/CreateUser.jsx";
+import Home from "./pages/Home.jsx";
+import UserList from "./pages/UserList.jsx";
+import CreateUser from "./pages/CreateUser.jsx";
 
 const AppRouter = () => {
   return (
