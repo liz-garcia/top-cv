@@ -6,6 +6,8 @@ const Input = ({ name, value, onChange, ...rest }) => {
       {...rest}
       name={name}
       value={value}
+      placeholder={name}
+      className="mx-auto w-2/3 rounded-md py-1 text-center text-zinc-800 placeholder:text-center placeholder:italic placeholder:text-slate-400"
       onChange={(e) => onChange(e.target.value)}
     />
   );

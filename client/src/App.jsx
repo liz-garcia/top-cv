@@ -1,13 +1,14 @@
-import "./App.css";
-import Nav from "./components/Nav/Nav.jsx";
 import AppRouter from "./AppRouter.jsx";
+import Nav from "./components/Nav.jsx";
 
-// * Client App Router
+// * App.jsx builds all our main layout elements:
+// * Nav, Main, Footer, Pages content (AppRouter), etc.
+// * AppRouter.jsx to load the content for each page.
 const App = () => {
   return (
     <>
       <Nav />
-      <main>
+      <main className="w-full pb-10">
         <AppRouter />
       </main>
     </>

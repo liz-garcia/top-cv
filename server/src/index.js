@@ -6,7 +6,6 @@ dotenv.config();
 import { URL } from "url";
 import express from "express";
 import app from "./app.js";
-import connectDB from "./db/connectDB.js";
 
 // * *************** The environment should set the port ***************
 const port = process.env.PORT || 3000;
@@ -16,10 +15,9 @@ if (port == null) {
   process.exit(1); // Exit the process if PORT is not defined
 }
 
-// * *************** Start Server and Connect to Database ***************
+// * *************** Start Server ***************
 const startServer = async () => {
   try {
-    await connectDB();
     app.listen(port, (err) => {
       if (err) {
         logError(`Failed to start server: ${err}`);
@@ -29,7 +27,7 @@ const startServer = async () => {
       }
     });
   } catch (error) {
-    logError(`Error connecting to the database: ${error}`);
+    logError(`Error: ${error}`);
     process.exit(1); // Exit the process if error is encountered
   }
 };

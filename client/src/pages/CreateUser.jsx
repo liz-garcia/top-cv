@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
+import Input from "../components/Input.jsx";
+import useFetch from "../hooks/useFetch.js";
 
-import Input from "../../components/Input/Input.jsx";
-import useFetch from "../../hooks/useFetch.js";
-
-// TODO Remember - All files related to CreateUser in client and server require extra work. This is just a basic setup.
 const CreateUser = () => {
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -48,8 +46,8 @@ const CreateUser = () => {
 
   return (
     <div>
-      <h1>What should the user be?</h1>
-      <form onSubmit={handleSubmit}>
+      <h1 className="my-8 text-2xl font-bold">What should the user be?</h1>
+      <form onSubmit={handleSubmit} className="flex flex-col space-y-8">
         <Input name="name" value={name} onChange={(value) => setName(value)} />
         <Input
           name="lastName"
@@ -66,7 +64,12 @@ const CreateUser = () => {
           value={email}
           onChange={(value) => setEmail(value)}
         />
-        <button type="submit">Submit</button>
+        <button
+          type="submit"
+          className="mx-auto w-fit rounded-lg bg-indigo-500 px-4 py-3 hover:bg-indigo-800"
+        >
+          Submit
+        </button>
       </form>
       {statusComponent}
     </div>
