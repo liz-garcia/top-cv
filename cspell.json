@@ -3,8 +3,12 @@
   "ignorePaths": [],
   "dictionaryDefinitions": [],
   "dictionaries": [],
-  "words": [],
+  "words": [
+    "buildpack"
+  ],
   // Add here words to be ignored by the spell check.
-  "ignoreWords": ["postbuild"],
+  "ignoreWords": [
+    "postbuild"
+  ],
   "import": []
 }
