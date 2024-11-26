@@ -8,7 +8,7 @@ import "./index.css";
 const dimensions = "min-h-screen";
 const layout = "p-24 flex flex-col items-center justify-center";
 const text = "text-center text-zinc";
-const darkMode = "dark:bg-zinc-900 dark:text-white";
+const darkMode = "dark:bg-zinc-800 dark:text-white";
 const tailwindClasses = `${dimensions} ${layout} ${text} ${darkMode}`;
 
 // Get the `root` element. Add TailwindCSS classes.

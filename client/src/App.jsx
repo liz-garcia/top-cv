@@ -8,7 +8,7 @@ const App = () => {
   return (
     <>
       <Nav />
-      <main className="w-full pb-10">
+      <main className="h-[50vh] w-full pb-10">
         <AppRouter />
       </main>
     </>
