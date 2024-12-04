@@ -15,7 +15,7 @@ const CreateUser = () => {
     setEmail("");
   };
   const { isLoading, error, performFetch, cancelFetch } = useFetch(
-    "/user/create",
+    "/users/register",
     onSuccess
   );
 
